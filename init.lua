@@ -37,13 +37,13 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           "vue",
-          "js"
+          "javascript"
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- "sumneko_lua",
       },
-      timeout_ms = 1000, -- default format timeout
+      timeout_ms = 3000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
