@@ -37,7 +37,8 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           "vue",
-          "javascript"
+          "javascript",
+          "js",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
