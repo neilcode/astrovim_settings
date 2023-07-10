@@ -30,6 +30,16 @@ return {
         end,
         desc = "Copy filepath to clipboard (relative)",
     },
+    ["<leader>bt"] = { 
+     "<cmd>TermExec size=100 direction=vertical cmd='dspec %')<cr>",
+      desc = "Run Tests for Current Buffer" 
+    },
+    ["<leader>tr"] = {
+      function() 
+        require("astronvim.utils").toggle_term_cmd("pry")
+      end,
+      desc = "ToggleTerm Ruby"
+    }
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
