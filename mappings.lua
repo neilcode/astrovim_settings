@@ -8,6 +8,8 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
+    --
+    -- BUFFER
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -32,16 +34,48 @@ return {
     },
     ["<leader>bt"] = { 
      "<cmd>TermExec size=100 direction=vertical cmd='dspec %')<cr>",
-      desc = "Run Tests for Current Buffer" 
+      desc = "Run Specs in Current Buffer" 
     },
+    --
+    -- TERMINAL
     ["<leader>tr"] = {
       function() 
         require("astronvim.utils").toggle_term_cmd("pry")
       end,
       desc = "ToggleTerm Ruby"
-    }
+    },
+    --
+    -- GIT
+    ["<leader>gy"] = {
+      function() 
+        require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".copy_to_clipboard, add_current_line_on_normal_mode = false})
+      end,
+      desc = "Copy GitHub URL"
+    },
+    ["<leader>gB"] = {
+      function() 
+        require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser, add_current_line_on_normal_mode = false})
+      end,
+      desc = "Open on GitHub"
+    },
+    --
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+  },
+  v = {
+    ["<leader>gy"] = {
+      function() 
+        require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".copy_to_clipboard})
+      end,
+      desc = "Copy GitHub URL"
+    },
+    ["<leader>gB"] = {
+      function() 
+        require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})
+      end,
+      desc = "Open on GitHub"
+    },
+
   },
   t = {
     -- setting a mapping to false will disable it
