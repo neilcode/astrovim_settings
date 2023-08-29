@@ -17,6 +17,16 @@ return {
         mappings = nil
       })
     end,
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('telescope').setup({
+        defaults = {
+          file_ignore_patterns = { '^doc/', 'node_modules/.*' }
+        },
+      })
+    end,
   }
 }
 
