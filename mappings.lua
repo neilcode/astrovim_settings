@@ -20,26 +20,26 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    ["<leader>bF"] = { 
+    ["<leader>bF"] = {
         function()
           vim.cmd('let @+=expand("%:p")')
         end,
         desc = "Copy filepath to clipboard (absolute)",
     },
-    ["<leader>bf"] = { 
+    ["<leader>bf"] = {
         function()
           vim.cmd('let @+=@%')
         end,
         desc = "Copy filepath to clipboard (relative)",
     },
-    ["<leader>bt"] = { 
+    ["<leader>bt"] = {
      "<cmd>TermExec size=100 direction=vertical cmd='dspec %')<cr>",
-      desc = "Run Specs in Current Buffer" 
+      desc = "Run Specs in Current Buffer"
     },
     --
     -- TERMINAL
     ["<leader>tr"] = {
-      function() 
+      function()
         require("astronvim.utils").toggle_term_cmd("pry")
       end,
       desc = "ToggleTerm Ruby"
@@ -47,13 +47,13 @@ return {
     --
     -- GIT
     ["<leader>gy"] = {
-      function() 
+      function()
         require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".copy_to_clipboard, add_current_line_on_normal_mode = false})
       end,
       desc = "Copy GitHub URL"
     },
     ["<leader>gB"] = {
-      function() 
+      function()
         require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser, add_current_line_on_normal_mode = false})
       end,
       desc = "Open on GitHub"
@@ -64,13 +64,13 @@ return {
   },
   v = {
     ["<leader>gy"] = {
-      function() 
+      function()
         require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".copy_to_clipboard})
       end,
       desc = "Copy GitHub URL"
     },
     ["<leader>gB"] = {
-      function() 
+      function()
         require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})
       end,
       desc = "Open on GitHub"
