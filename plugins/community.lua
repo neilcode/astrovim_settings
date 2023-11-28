@@ -6,23 +6,6 @@ return {
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },
-  { import = "astrocommunity.project.projectmgr-nvim" },
-  { "charludo/projectmgr.nvim",
-    opts = {
-      autogit = {
-        enabled = false,
-        command = "git pull --ff-only",
-      },
-      reopen = false,
-      session = { enabled = true, file = "Session.vim" },
-      shada = { enabled = false, file = "main.shada" },
-      scripts = {
-        enabled = false,
-        file_startup = "startup.sh",
-        file_shutdown = "shutdown.sh",
-      },
-    }
-  },
   { import = "astrocommunity.scrolling.cinnamon-nvim" },
   { "declancm/cinnamon.nvim",
     opts = {
