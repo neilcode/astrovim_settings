@@ -71,6 +71,17 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Set up custom filetypes
+    vim.filetype.add {
+      extension = {
+        slim = "slim",
+      },
+    }
+
+    -- automatically remove whitespace before writing to the buffer
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      command = "%s/\\s\\+$//e"
+    })
     -- vim.filetype.add {
     --   extension = {
     --     foo = "fooscript",
